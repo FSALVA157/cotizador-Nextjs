@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+
+const Formulario = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    mensaje: ''
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Aquí puedes realizar alguna lógica con los datos del formulario
+    console.log(formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nombre:
+        <input
+          type="text"
+          name="nombre"
+          value={formData.nombre}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
+      <label>
+        Mensaje:
+        <textarea
+          name="mensaje"
+          value={formData.mensaje}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+};
+
+export default Formulario;
