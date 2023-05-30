@@ -45,7 +45,7 @@ function handleChangeYear(event: Event, newYear: number | number[]) {
 
 
   return (
-    <Box sx={{ minWidth: 300 }}>
+    <Box sx={{ width: '100%' }}>
       <Slider
         aria-label="Custom marks"
         defaultValue={2023}

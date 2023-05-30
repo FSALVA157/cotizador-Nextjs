@@ -1,4 +1,5 @@
 import { ICarCotizacion } from '@/interfaces/interfaces-cars';
+import { COTIZACION_INITIAL_STATE } from './CarsProvider';
 
 
 
@@ -10,7 +11,8 @@ type CarsActionType = { type: '[Cotizar] - ChangeYear', payload: {newYear: numbe
                       { type: '[Cotizar] - ChangeEdad', payload: {newEdad: number}} |
                       { type: '[Cotizar] - ChangeLugar', payload: {newLugar: string}} |
                       { type: '[Cotizar] - ChangeEmail', payload: {newEmail: string}} |
-                      { type: '[Cotizar] - ChangeTelefono', payload: {newTelefono: string}} 
+                      { type: '[Cotizar] - ChangeTelefono', payload: {newTelefono: string}} |
+                      { type: '[Cotizar] - ResetCotizacion'} 
 
 
 
@@ -61,7 +63,8 @@ export const CotizacionReducer = (state: ICarCotizacion, action: CarsActionType)
                 ...state,
                 telefono: action.payload.newTelefono
             };
-    
+        case '[Cotizar] - ResetCotizacion':
+            return COTIZACION_INITIAL_STATE;    
 
         default:
             return state;

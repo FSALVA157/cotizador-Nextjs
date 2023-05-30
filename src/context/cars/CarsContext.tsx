@@ -12,7 +12,8 @@ interface IContextProps {
     handleEdad: (value: number)=>void,
     handleLugar: (value: string)=>void,
     handleEmail: (value: string)=>void,
-    handleTelefono: (value: string)=>void
+    handleTelefono: (value: string)=>void,
+    handleResetCotizacion: ()=>void
 }
 
 export const CarsContext = createContext({} as IContextProps)

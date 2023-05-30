@@ -9,7 +9,7 @@ export interface CarsState{
    property: boolean;
 }
 
-const COTIZACION_INITIAL_STATE: ICarCotizacion = {
+export const COTIZACION_INITIAL_STATE: ICarCotizacion = {
     year: 0,
     marca: '',
     modelo: '',
@@ -17,8 +17,8 @@ const COTIZACION_INITIAL_STATE: ICarCotizacion = {
     gnc: false,
     edad: 0,
     lugar: '',
-    email: '',
-    telefono: ''
+    email: undefined,
+    telefono: undefined
 }
 
 interface IProps{
@@ -29,6 +29,10 @@ interface IProps{
 
 export const CarsProvider = ({children}: IProps) => {
 const [stateCotizacion, dispatch] = useReducer(CotizacionReducer, COTIZACION_INITIAL_STATE)
+
+function handleResetCotizacion() {
+  dispatch({type: '[Cotizar] - ResetCotizacion'})
+}
 
 
 function handleYear(value: number) {
@@ -79,7 +83,8 @@ function handleTelefono(value: string) {
        handleEdad,
        handleLugar,
        handleEmail,
-       handleTelefono
+       handleTelefono,
+       handleResetCotizacion
   }}>
     {children}
   </CarsContext.Provider>
