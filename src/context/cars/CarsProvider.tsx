@@ -14,7 +14,7 @@ export const COTIZACION_INITIAL_STATE: ICarCotizacion = {
     marca: '',
     modelo: '',
     version: '',
-    gnc: false,
+    gnc: null,
     edad: 0,
     lugar: '',
     email: undefined,
@@ -74,7 +74,7 @@ function handleTelefono(value: string) {
   return (
    <CarsContext.Provider value={{
        cars: carsData,
-       car_cotizacion: COTIZACION_INITIAL_STATE,
+       car_cotizacion: stateCotizacion,
        handleYear,
        handleMarca,
        handleModelo,

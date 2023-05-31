@@ -3,7 +3,7 @@ export interface ICarCotizacion{
     marca: string;
     modelo: string;
     version: string;
-    gnc: boolean;
+    gnc: boolean | null;
     edad: number;
     lugar: string;
     email?: string;
