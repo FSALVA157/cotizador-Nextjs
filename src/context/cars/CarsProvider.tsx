@@ -1,9 +1,12 @@
-import { ReactNode, useReducer } from 'react';
+import { ReactNode, useReducer, useState } from 'react';
 // import { CarsContext } from './';
 import { ICarCotizacion, ICars } from '@/interfaces/interfaces-cars';
 import { carsData } from './carsData';
 import { CarsContext } from './CarsContext';
 import { CotizacionReducer } from './cotizacionReducer';
+import lightTheme from '@/themes/light-theme';
+import darkTheme from '@/themes/dark-theme';
+import { Theme } from '@mui/material';
 
 export interface CarsState{
    property: boolean;
@@ -73,7 +76,7 @@ function handleTelefono(value: string) {
 
   return (
    <CarsContext.Provider value={{
-       cars: carsData,
+       cars: carsData,       
        car_cotizacion: stateCotizacion,
        handleYear,
        handleMarca,

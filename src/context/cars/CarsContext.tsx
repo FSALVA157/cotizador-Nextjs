@@ -1,9 +1,10 @@
 import { ICarCotizacion, ICars } from '@/interfaces/interfaces-cars';
+import { Theme } from '@mui/material';
 import { createContext } from 'react';
 
 interface IContextProps {
     cars: ICars;
-    car_cotizacion: ICarCotizacion,
+    car_cotizacion: ICarCotizacion,    
     handleYear: (value: number)=>void
     handleMarca: (value: string)=>void,
     handleModelo: (value: string)=>void,
