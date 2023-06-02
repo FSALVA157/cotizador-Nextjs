@@ -235,7 +235,8 @@ export default function CarsPage(props: any) {
             initial="hidden"
             animate="visible"
           >
-            <Card sx={{ height: "calc(100vh - 100px)", py: 2 }}>
+            {/* <Card sx={{ height: "calc(100vh - 100px)", py: 2 }}> */}
+            <Card sx={{ py: 2 }}>
               <CardHeader
                 title="Tus Opciones"
                 action={
