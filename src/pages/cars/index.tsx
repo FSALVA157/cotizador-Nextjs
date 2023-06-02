@@ -172,7 +172,7 @@ export default function CarsPage(props: any) {
             initial="hidden"
             animate="visible"
           >
-            <Card sx={{ px: 7, py: 2 }}>
+            <Card sx={{ px: 7, pt: 2, pb: 10 }}>
               <CardHeader title="Cotizador" />
               <Stepper activeStep={activeStep} orientation="vertical">
                 {steps.map((step, index) => (
@@ -236,7 +236,7 @@ export default function CarsPage(props: any) {
             animate="visible"
           >
             {/* <Card sx={{ height: "calc(100vh - 100px)", py: 2 }}> */}
-            <Card sx={{ py: 2 }}>
+            <Card sx={{ pt: 2, pb: 10 }}>
               <CardHeader
                 title="Tus Opciones"
                 action={
